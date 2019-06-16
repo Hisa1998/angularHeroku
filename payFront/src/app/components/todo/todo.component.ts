@@ -12,7 +12,13 @@ export class TodoComponent implements OnInit {
   list:String[] 
   newItemFormControl = new FormControl("")
   constructor(private todoService:TodoService) {
-    this.todoService.getList().subscribe(res=>{
+    this.todoService.getList().subscribe((res)=>{
+      if (res[0].length)
+      this.list= res[0]
+      else
+      {
+        this.list= ["gaming","coding", "sleeping"]
+      }
 
     } )  }
 
@@ -27,7 +33,7 @@ export class TodoComponent implements OnInit {
     {
     this.list.push(text);// push it  in Front-End
     this.todoService.addItem(text).subscribe(res=>{
-      console.log(res)
+      console.log(res)// to make sure all is ok
     });  // add it in the data base
     this.newItemFormControl.setValue("") // clear the text box
     
@@ -36,7 +42,7 @@ export class TodoComponent implements OnInit {
   delete(index:number){
     this.list.splice(index,  1)// delete form front End
     this.todoService.deleteItem(index).subscribe(res=>{
-      console.log(res)
+      console.log(res)// to make sure all is ok
     });;// delete from back End
   }
 }
