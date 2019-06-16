@@ -15,7 +15,7 @@ export class TodoService {
   {
     var token =localStorage.getItem('token');
     let headers = new HttpHeaders({"x-auth-token":token})
-    return this.http.post("localHost:6000/api/Users/Add",{
+    return this.http.post("https://stark-thicket-13694.herokuapp.com/api/Users/Add",{
       "addItem": text
     },{headers:headers})
   };
@@ -24,7 +24,7 @@ export class TodoService {
     
     var token =localStorage.getItem('token');
     let headers = new HttpHeaders({"x-auth-token":token})
-    return this.http.post("localHost:6000/api/Users/Remove",{
+    return this.http.post("https://stark-thicket-13694.herokuapp.com/api/Users/Remove",{
       "index": index
     },{headers:headers})
   };
@@ -32,6 +32,6 @@ export class TodoService {
   getList(){
     var token = localStorage.getItem('token');
     let headers1 = new HttpHeaders({"x-auth-token":token});
-    return this.http.get("localHost:6000/api/Users/MyList",{headers:headers1});
+    return this.http.get("https://stark-thicket-13694.herokuapp.com/api/Users/MyList",{headers:headers1});
   }
 }

@@ -11,17 +11,8 @@ export class SignInService {
   
   signIN(userName,password)
   {
-  return this.http.post("localHost:6000/api/Auth/",{
+  return this.http.post("https://stark-thicket-13694.herokuapp.com/api/Auth/",{
       "UserName":userName
       ,"UserPassword" : password });
   }
-  getMyList()
-  {
-    var token = localStorage.getItem('token');
-    let headers1 = new HttpHeaders({"x-auth-token":token});
-    return this.http.get("localHost:6000/api/Users/MyList",{headers:headers1});
-     
-
-  }
-
 }
