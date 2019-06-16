@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
       this.list= res[0]
       else
       {
-        this.list= ["gaming","coding", "sleeping"]
+        this.list= ["defualt 1","defualt 2", "defualt 3"]
       }
 
     } )  }
