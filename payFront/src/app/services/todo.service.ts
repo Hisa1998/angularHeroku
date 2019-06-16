@@ -13,16 +13,25 @@ export class TodoService {
 
   addItem(text)
   {
-    let headers = new HttpHeaders({"x-auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDA1NmY0YjYyZDZiYTcxMzhhYWFkYWIiLCJpYXQiOjE1NjA2MzczMjIsImV4cCI6MTU2MDcyMzcyMn0.WTu7F1kjRHty2HWj1kw27xlvA7xd--tPXjEXTQcVY3Y"})
+    var token =localStorage.getItem('token');
+    let headers = new HttpHeaders({"x-auth-token":token})
     return this.http.post("localHost:6000/api/Users/Add",{
       "addItem": text
     },{headers:headers})
   };
   deleteItem(index)
   {
-
+    
+    var token =localStorage.getItem('token');
+    let headers = new HttpHeaders({"x-auth-token":token})
+    return this.http.post("localHost:6000/api/Users/Remove",{
+      "index": index
+    },{headers:headers})
   };
+
   getList(){
-    return [ "hello" , 'hi', 'bye']
+    var token = localStorage.getItem('token');
+    let headers1 = new HttpHeaders({"x-auth-token":token});
+    return this.http.get("localHost:6000/api/Users/MyList",{headers:headers1});
   }
 }

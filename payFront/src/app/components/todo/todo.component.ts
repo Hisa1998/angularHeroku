@@ -12,8 +12,9 @@ export class TodoComponent implements OnInit {
   list:String[] 
   newItemFormControl = new FormControl("")
   constructor(private todoService:TodoService) {
-    this.list = todoService.getList()
-   }
+    this.todoService.getList().subscribe(res=>{
+
+    } )  }
 
 
   ngOnInit() {
@@ -34,6 +35,8 @@ export class TodoComponent implements OnInit {
   }
   delete(index:number){
     this.list.splice(index,  1)// delete form front End
-    this.todoService.deleteItem(index);// delete from back End
+    this.todoService.deleteItem(index).subscribe(res=>{
+      console.log(res)
+    });;// delete from back End
   }
 }
