@@ -1,0 +1,34 @@
+.list-item{
+    background: #eeeeee;
+    border-radius: 25px;
+    margin:5px ; 
+    height: 30px ;
+}
+.content{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.header{
+    background: #404040 ; 
+    color: white; 
+    border-radius: 5px; 
+    margin-bottom: 30px ; 
+
+}
+
+.delete-icon{
+    color: red ; 
+    float: right;
+}
+.input{
+    margin-top: 5px;
+    /* border: 0; */
+    /* border-radius: 25px; */
+    height: 30px;
+    margin-left: 14px;
+
+}
+.Add-icon
+{
+color: green;    
+}

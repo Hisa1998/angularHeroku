@@ -1,0 +1,21 @@
+<mat-toolbar class="row header">
+    <span>Sign In </span>
+  </mat-toolbar>
+  
+<div class="container">
+  <mat-card class="contents">
+    <div>
+      <div class="row">
+        <div class="text col-4"> Enter your User Name</div>
+        <input class="inputs col-6" placeholder="Enter User Name" [formControl]="userNameFormControl">
+      </div>
+      <div class="row">
+        <div class="text col-4">Enter your Password</div>
+        <input class="inputs col-6" placeholder="Enter Password" [formControl]="passWordFormControl">
+      </div>
+      <button class="button" (click)="signIn()">
+        Confirm
+      </button>
+    </div>
+  </mat-card>
+</div>
